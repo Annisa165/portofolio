@@ -232,7 +232,30 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.style.opacity='1';el.style.transform='translateY(0)'}});},{threshold:0.07});
-document.querySelectorAll('.tl-row,.skill-item,.about-card,.hobi-pill').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .45s,transform .45s';obs.observe(el);});
-document.getElementById('sendBtn').addEventListener('click',function(){this.textContent='Terkirim! ✓';this.style.background='var(--olive-light)';setTimeout(()=>{this.textContent='Kirim pesan';this.style.background=''},3000);});
+// Animasi scroll yang lebih reliable
+function animateOnScroll() {
+  document.querySelectorAll('.tl-row,.skill-item,.about-card,.hobi-pill').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }
+  });
+}
+
+document.querySelectorAll('.tl-row,.skill-item,.about-card,.hobi-pill').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity .45s, transform .45s';
+});
+
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
+setTimeout(animateOnScroll, 100);
+
+document.getElementById('sendBtn').addEventListener('click', function() {
+  this.textContent = 'Terkirim! ✓';
+  this.style.background = 'var(--olive-light)';
+  setTimeout(() => { this.textContent = 'Kirim pesan'; this.style.background = ''; }, 3000);
+});
 </script>
