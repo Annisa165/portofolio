@@ -1,3 +1,12 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portofolio Siti Annisa Rahmiasari, mahasiswi Teknik Informatika UIN Maulana Malik Ibrahim Malang.">
+  <title>Annisa.dev — Portofolio</title>
+</head>
+<body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -96,18 +105,107 @@ textarea.fi{resize:vertical;min-height:90px}
 footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
 .f-logo{font-family:'Space Mono',monospace;font-size:11px;color:var(--olive-light);letter-spacing:3px}
 .f-copy{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted)}
+
+/* ===== Interaksi & responsivitas tambahan ===== */
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{overflow-x:hidden}
+.scroll-progress{position:fixed;left:0;top:0;height:3px;background:var(--yellow);width:0;z-index:300;transition:width .12s linear}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--yellow);transition:width .2s ease}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--yellow)}
+.nav-toggle{display:none;width:34px;height:30px;background:transparent;border:1px solid rgba(242,237,228,.3);color:var(--cream);cursor:pointer;font-size:17px;line-height:1}
+.btn{transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease;text-decoration:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.22)}
+.btn-primary:hover{background:var(--olive-light);color:var(--dark)}
+.btn-outline:hover{border-color:var(--yellow);color:var(--yellow)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.skill-bar,.lang-bar{transition:width 1.1s cubic-bezier(.22,1,.36,1)}
+.hero-stat-num{font-variant-numeric:tabular-nums}
+.fi:focus{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(232,197,71,.12)}
+.fi.invalid{border-color:#ff9b8f}
+.form-status{min-height:18px;font-family:'Space Mono',monospace;font-size:9px;line-height:1.55;color:var(--olive-light);letter-spacing:.4px}
+.send-btn{transition:transform .2s ease,background .2s ease}
+.send-btn:hover{background:#f4d865;transform:translateY(-2px)}
+.send-btn:disabled{opacity:.7;cursor:not-allowed;transform:none}
+.back-to-top{position:fixed;right:18px;bottom:18px;width:39px;height:39px;border:0;border-radius:50%;background:var(--yellow);color:var(--dark);font-size:17px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s,transform .2s,visibility .2s;z-index:90;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.toast{position:fixed;right:18px;bottom:68px;max-width:310px;background:var(--dark);border-left:3px solid var(--yellow);color:var(--cream);padding:12px 14px;font-size:11px;line-height:1.55;box-shadow:0 10px 28px rgba(0,0,0,.28);transform:translateY(16px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:200}
+.toast.show{opacity:1;transform:translateY(0)}
+.contact-icon{width:16px;display:inline-block;color:var(--olive-light);font-size:14px;text-align:center;flex-shrink:0}
+.hero-right-info{position:relative}
+.hero-right-info::after{content:'AVAILABLE';position:absolute;right:1.25rem;top:1.25rem;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:1.5px;color:rgba(26,31,26,.35)}
+#lastUpdated{display:block;margin-top:4px;font-size:8px;letter-spacing:1px}
+/* ===== Web Development showcase ===== */
+.web-dev-section{padding-top:4.2rem;padding-bottom:4.2rem}
+.web-dev-layout{display:grid;grid-template-columns:1.25fr .9fr;gap:2.25rem;align-items:stretch}
+.web-dev-copy{padding:1.6rem 0}
+.web-kicker{font-family:'Space Mono',monospace;font-size:9px;color:var(--olive2);letter-spacing:2px;text-transform:uppercase;margin-bottom:.85rem}
+.web-dev-copy h3{font-family:'Playfair Display',serif;font-size:clamp(25px,3.4vw,38px);line-height:1.12;color:var(--dark);max-width:560px;margin-bottom:1.05rem}
+.web-dev-copy h3 em{font-style:italic;color:var(--olive2)}
+.web-dev-copy>p:not(.web-kicker){font-size:13px;line-height:1.85;color:var(--text);max-width:570px}
+.web-points{display:grid;gap:.65rem;margin-top:1.5rem}
+.web-points>div{display:grid;grid-template-columns:34px 1fr;column-gap:.75rem;padding:.8rem 0;border-top:1px solid rgba(44,44,44,.12)}
+.web-points span{grid-row:span 2;font-family:'Space Mono',monospace;font-size:10px;color:var(--olive2);padding-top:2px}
+.web-points strong{font-size:12px;color:var(--dark);font-weight:500}
+.web-points small{font-size:11px;color:var(--muted);line-height:1.55;margin-top:.2rem}
+.web-stack-card{background:var(--dark);padding:1.35rem;display:flex;flex-direction:column;min-height:100%;box-shadow:10px 10px 0 rgba(61,90,62,.14)}
+.web-stack-top{display:flex;align-items:center;gap:.55rem;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--olive-light)}
+.stack-dot{width:7px;height:7px;background:var(--yellow);border-radius:50%;box-shadow:0 0 0 4px rgba(232,197,71,.12)}
+.stack-label{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.35;color:var(--cream);margin:1.05rem 0 1rem}
+.tech-picker{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}
+.tech-chip{background:rgba(168,197,160,.1);border:1px solid rgba(168,197,160,.22);color:var(--olive-light);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.6px;padding:6px 8px;cursor:pointer;transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
+.tech-chip:hover,.tech-chip.active{background:var(--yellow);border-color:var(--yellow);color:var(--dark);transform:translateY(-2px)}
+.tech-detail{border-left:2px solid var(--olive2);padding:.15rem 0 .15rem .8rem;min-height:86px}
+.tech-detail-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;margin-bottom:.45rem}
+.tech-detail p{font-size:11px;color:rgba(242,237,228,.66);line-height:1.75}
+.web-note{margin-top:auto;padding-top:1rem;font-family:'Space Mono',monospace;font-size:9px;line-height:1.65;letter-spacing:.3px;color:var(--olive-light)}
+@media(max-width:700px){
+  nav{height:58px;padding:0 1rem}
+  .nav-toggle{display:block}
+  .nav-links{position:absolute;left:0;right:0;top:58px;display:flex;flex-direction:column;gap:0;background:var(--olive);border-top:1px solid rgba(242,237,228,.12);max-height:0;overflow:hidden;transition:max-height .28s ease}
+  .nav-links.open{max-height:335px}
+  .nav-links a{padding:13px 1rem;border-bottom:1px solid rgba(242,237,228,.08)}
+  .nav-links a::after{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:2.3rem 1.25rem;min-height:680px;border-right:0}
+  .hero-right{min-height:460px}
+  .hero-photo-area{min-height:350px}
+  .hero-right-info{padding:1.15rem 1.25rem}
+  .hero-bottom{gap:1rem}
+  .hero-stat-num{font-size:21px}
+  .section,.skills-bg,.contact-bg{padding:2.75rem 1.25rem}
+  .about-grid,.contact-inner,.web-dev-layout{grid-template-columns:1fr;gap:1.5rem}
+  .skills-grid{grid-template-columns:1fr}
+  .web-dev-section{padding-top:3rem;padding-bottom:3rem}
+  .web-dev-copy{padding:0}
+  .web-stack-card{min-height:unset}
+  .tl-row{grid-template-columns:1fr;gap:.45rem;padding:1.2rem 0}
+  footer{padding:1.25rem;gap:1rem;align-items:flex-start;flex-direction:column}
+}
+@media(max-width:390px){
+  h1{font-size:35px}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .btn{text-align:center}
+  .hero-bottom{justify-content:space-between}
+}
+
 </style>
 
-<nav>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<nav id="siteNav">
   <div class="nav-logo">Annisa.dev</div>
-  <div class="nav-links">
-    <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
-    <a onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</a>
-    <a onclick="document.getElementById('edu').scrollIntoView({behavior:'smooth'})">Pendidikan</a>
-    <a onclick="document.getElementById('exp').scrollIntoView({behavior:'smooth'})">Pengalaman</a>
-    <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kontak</a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#webdev">Web Dev</a>
+    <a href="#edu">Pendidikan</a>
+    <a href="#exp">Pengalaman</a>
+    <a href="#contact">Kontak</a>
   </div>
-  <div class="nav-dot"></div>
+  <div class="nav-dot" aria-label="Status aktif"></div>
 </nav>
 
 <div class="hero">
@@ -118,8 +216,8 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
       <h1>Hi, I'm<br><em>Annisa.</em><br>I love to build<br>& to teach.</h1>
       <p class="hero-sub">Mahasiswi Teknik Informatika yang aktif di akademik, volunteer, dan dunia pendidikan. Passionate tentang web development, teknologi, dan berbagi ilmu.</p>
       <div class="hero-btns">
-        <div class="btn btn-primary">Lihat perjalananku</div>
-        <div class="btn btn-outline">Hubungi aku</div>
+        <button class="btn btn-primary" id="journeyBtn" type="button">Lihat perjalananku</button>
+        <button class="btn btn-outline" id="contactBtn" type="button">Hubungi aku</button>
       </div>
     </div>
     <div class="hero-bottom">
@@ -135,7 +233,7 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
     <div class="hero-right-info">
       <div class="hero-right-name">Siti Annisa Rahmiasari</div>
       <div class="hero-right-role">Mahasiswi Teknik Informatika</div>
-      <div class="avail-badge"><span class="avail-dot"></span>Open to opportunity</div>
+      <div class="avail-badge" id="availabilityBadge"><span class="avail-dot"></span><span id="availabilityText">Open to opportunity</span></div>
     </div>
   </div>
 </div>
@@ -145,7 +243,7 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
   <div class="about-grid">
     <div class="about-text">
       <p>Halo! Aku Siti Annisa Rahmiasari, mahasiswi Teknik Informatika di UIN Maulana Malik Ibrahim Malang angkatan 2023. Aku aktif dalam kegiatan akademik sekaligus berbagai kegiatan volunteer di kampus.</p>
-      <p>Aku terbiasa mengelola waktu dengan baik, bekerja dalam tim, dan memiliki pengalaman di bidang edukasi serta teknologi. Saat ini aku juga aktif mengajar les privat dan menulis cerita di Wattpad.</p>
+      <p>Aku terbiasa mengelola waktu dengan baik, bekerja dalam tim, dan memiliki pengalaman di bidang edukasi serta teknologi. Saat ini aku juga aktif mengembangkan kemampuan web development, mengajar les privat, dan menulis cerita di Wattpad.</p>
       <p>Selain coding, aku punya ketertarikan di dunia menulis dan terus mengembangkan kemampuan komunikasi lewat berbagai kegiatan sosial dan pendidikan.</p>
       <div class="hobi-row">
         <span class="hobi-pill">📚 Membaca</span>
@@ -160,6 +258,7 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
         <li>Mahasiswi Teknik Informatika</li>
         <li>UIN Maliki Malang, 2023–sekarang</li>
         <li>Asisten Praktikum Algoritma & OOP</li>
+        <li>Fokus belajar Web Development</li>
         <li>Guru les privat Matematika & IPA</li>
         <li>Penulis lepas di Wattpad</li>
         <li>Malang, Jawa Timur 🇮🇩</li>
@@ -176,7 +275,7 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
   <div class="skills-inner">
     <div class="sec-hdr"><span class="sec-num">02 /</span><h2 class="sec-title">Kemampuan</h2></div>
     <div class="skills-grid">
-      <div class="skill-item"><div class="skill-top"><span class="skill-name">HTML / CSS</span><span class="skill-pct">80%</span></div><div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div><div class="skill-tags"><span class="skill-tag">Web Dev</span><span class="skill-tag">Responsive</span></div></div>
+      <div class="skill-item"><div class="skill-top"><span class="skill-name">Web Development</span><span class="skill-pct">80%</span></div><div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div><div class="skill-tags"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">Responsive</span></div></div>
       <div class="skill-item"><div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">70%</span></div><div class="skill-bar-bg"><div class="skill-bar" style="width:70%"></div></div><div class="skill-tags"><span class="skill-tag">Scripting</span><span class="skill-tag">OOP</span></div></div>
       <div class="skill-item"><div class="skill-top"><span class="skill-name">MySQL</span><span class="skill-pct">68%</span></div><div class="skill-bar-bg"><div class="skill-bar" style="width:68%"></div></div><div class="skill-tags"><span class="skill-tag">Database</span><span class="skill-tag">Query</span></div></div>
       <div class="skill-item"><div class="skill-top"><span class="skill-name">Microsoft Office</span><span class="skill-pct">85%</span></div><div class="skill-bar-bg"><div class="skill-bar" style="width:85%"></div></div><div class="skill-tags"><span class="skill-tag">Word</span><span class="skill-tag">Excel</span></div></div>
@@ -186,8 +285,42 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
   </div>
 </div>
 
+<div class="section web-dev-section" id="webdev">
+  <div class="sec-hdr"><span class="sec-num">03 /</span><h2 class="sec-title">Web Development</h2></div>
+  <div class="web-dev-layout">
+    <div class="web-dev-copy">
+      <p class="web-kicker">// Fokus pengembangan</p>
+      <h3>Membangun website yang <em>rapi, responsif,</em> dan mudah digunakan.</h3>
+      <p>Aku terus mengembangkan kemampuan front-end untuk membuat halaman profil, landing page, dan antarmuka web yang tampil nyaman di desktop maupun ponsel. Fokus utamaku adalah struktur yang jelas, desain yang responsif, serta interaksi sederhana yang membantu pengguna.</p>
+      <div class="web-points">
+        <div><span>01</span><strong>Landing page & profil</strong><small>Halaman informatif dengan struktur konten yang terarah.</small></div>
+        <div><span>02</span><strong>Responsive interface</strong><small>Layout yang menyesuaikan layar desktop, tablet, dan mobile.</small></div>
+        <div><span>03</span><strong>Interaksi web</strong><small>Animasi, navigasi, validasi form, dan elemen JavaScript dasar.</small></div>
+      </div>
+    </div>
+    <aside class="web-stack-card" aria-label="Teknologi web yang dipelajari">
+      <div class="web-stack-top">
+        <span class="stack-dot"></span>
+        <span>TECH STACK</span>
+      </div>
+      <p class="stack-label">Teknologi yang digunakan dan sedang diperdalam</p>
+      <div class="tech-picker" role="tablist" aria-label="Pilih teknologi web">
+        <button class="tech-chip active" type="button" data-tech="HTML">HTML</button>
+        <button class="tech-chip" type="button" data-tech="CSS">CSS</button>
+        <button class="tech-chip" type="button" data-tech="JavaScript">JavaScript</button>
+        <button class="tech-chip" type="button" data-tech="MySQL">MySQL</button>
+      </div>
+      <div class="tech-detail" id="techDetail" aria-live="polite">
+        <div class="tech-detail-label">HTML</div>
+        <p>Menyusun struktur konten yang terorganisir agar halaman mudah dibaca dan dikembangkan.</p>
+      </div>
+      <div class="web-note">Saat ini terbuka untuk belajar, kolaborasi, dan membangun proyek web sederhana.</div>
+    </aside>
+  </div>
+</div>
+
 <div class="section" id="edu">
-  <div class="sec-hdr"><span class="sec-num">03 /</span><h2 class="sec-title">Pendidikan</h2></div>
+  <div class="sec-hdr"><span class="sec-num">04 /</span><h2 class="sec-title">Pendidikan</h2></div>
   <div class="tl">
     <div class="tl-row"><div class="tl-period">2023 — sekarang</div><div><div class="tl-title">UIN Maulana Malik Ibrahim Malang</div><div class="tl-sub">Teknik Informatika</div><div class="tl-desc">Aktif dalam berbagai kegiatan kampus. Asisten praktikum Algoritma dan OOP.</div><div class="tl-tags"><span class="tl-tag">Asisten Prak. Algoritma</span><span class="tl-tag">Asisten Prak. OOP</span><span class="tl-tag">MTF</span><span class="tl-tag">STATIK</span></div></div></div>
     <div class="tl-row"><div class="tl-period">2020 — 2023</div><div><div class="tl-title">SMAN 1 Sooko</div><div class="tl-sub">Jurusan IPA</div></div></div>
@@ -197,7 +330,7 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
 </div>
 
 <div class="section" id="exp" style="padding-top:0">
-  <div class="sec-hdr"><span class="sec-num">04 /</span><h2 class="sec-title">Pengalaman kerja</h2></div>
+  <div class="sec-hdr"><span class="sec-num">05 /</span><h2 class="sec-title">Pengalaman kerja</h2></div>
   <div class="tl">
     <div class="tl-row"><div class="tl-period">2024 — sekarang</div><div><div class="tl-title">Guru Les Privat</div><div class="tl-sub">Bimbingan Belajar Juara</div><div class="tl-desc">Mengajar siswa SD dan SMP dalam Matematika dan IPA secara privat.</div><div class="tl-tags"><span class="tl-tag">Matematika</span><span class="tl-tag">IPA</span><span class="tl-tag">Komunikasi</span></div></div></div>
     <div class="tl-row"><div class="tl-period">2024 — sekarang</div><div><div class="tl-title">Penulis Lepas</div><div class="tl-sub">Freelance · Wattpad</div><div class="tl-desc">Menulis cerita pendek dan mengembangkan gaya penulisan melalui platform Wattpad.</div><div class="tl-tags"><span class="tl-tag">Creative Writing</span><span class="tl-tag">Storytelling</span></div></div></div>
@@ -207,54 +340,319 @@ footer{background:var(--dark);padding:1.5rem 2rem;display:flex;justify-content:s
 <div class="contact-bg" id="contact">
   <div class="contact-inner">
     <div class="contact-left">
-      <div class="sec-hdr"><span class="sec-num">05 /</span><h2 class="sec-title">Hubungi saya</h2></div>
+      <div class="sec-hdr"><span class="sec-num">06 /</span><h2 class="sec-title">Hubungi saya</h2></div>
       <p>Tertarik untuk berkolaborasi, rekrut, atau sekadar ngobrol? Jangan ragu menghubungiku!</p>
       <div class="c-items">
-        <a href="tel:082230012511" class="c-item"><i class="ti ti-phone"></i>082230012511</a>
-        <a href="mailto:annisarahmiasari165@gmail.com" class="c-item"><i class="ti ti-mail"></i>annisarahmiasari165@gmail.com</a>
+        <a href="tel:082230012511" class="c-item"><span class="contact-icon">☎</span>082230012511</a>
+        <a href="mailto:annisarahmiasari165@gmail.com" class="c-item"><span class="contact-icon">✉</span>annisarahmiasari165@gmail.com</a>
        </div>
     </div>
     <div>
-      <div class="c-form">
-        <div><label>Nama</label><input class="fi" type="text" placeholder="Nama kamu"></div>
-        <div><label>Email</label><input class="fi" type="email" placeholder="email@kamu.com"></div>
-        <div><label>Pesan</label><textarea class="fi" placeholder="Halo Annisa..."></textarea></div>
-        <button class="send-btn" id="sendBtn">Kirim pesan</button>
-      </div>
+      <form class="c-form" id="contactForm" novalidate>
+        <div><label for="senderName">Nama</label><input class="fi" id="senderName" name="nama" type="text" placeholder="Nama kamu" autocomplete="name" required></div>
+        <div><label for="senderEmail">Email</label><input class="fi" id="senderEmail" name="email" type="email" placeholder="email@kamu.com" autocomplete="email" required></div>
+        <div><label for="senderMessage">Pesan</label><textarea class="fi" id="senderMessage" name="pesan" placeholder="Halo Annisa..." required></textarea></div>
+        <button class="send-btn" id="sendBtn" type="submit">Kirim pesan</button>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </div>
 
 <footer>
   <div class="f-logo">Siti Annisa Rahmiasari</div>
-  <div class="f-copy">Teknik Informatika · UIN Maliki Malang · 2025</div>
+  <div class="f-copy">Teknik Informatika · UIN Maliki Malang · <span id="currentYear"></span><span id="lastUpdated"></span></div>
 </footer>
 
+<button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
-// Animasi scroll yang lebih reliable
-function animateOnScroll() {
-  document.querySelectorAll('.tl-row,.skill-item,.about-card,.hobi-pill').forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }
+(() => {
+  const $ = (selector, parent = document) => parent.querySelector(selector);
+  const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
+
+  const navToggle = $('#navToggle');
+  const navLinks = $('#navLinks');
+  const progress = $('#scrollProgress');
+  const backToTop = $('#backToTop');
+  const toast = $('#toast');
+  const form = $('#contactForm');
+  const formStatus = $('#formStatus');
+  const sendBtn = $('#sendBtn');
+
+  function scrollToSection(id) {
+    const target = $(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  $('#journeyBtn')?.addEventListener('click', () => scrollToSection('#edu'));
+  $('#contactBtn')?.addEventListener('click', () => scrollToSection('#contact'));
+
+  navToggle?.addEventListener('click', () => {
+    const expanded = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(expanded));
+    navToggle.textContent = expanded ? '×' : '☰';
   });
+
+  $$('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      if (navToggle) navToggle.textContent = '☰';
+    });
+  });
+
+  function updateScrollUI() {
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = documentHeight > 0 ? (window.scrollY / documentHeight) * 100 : 0;
+    progress.style.width = `${percentage}%`;
+    backToTop.classList.toggle('show', window.scrollY > 560);
+  }
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  updateScrollUI();
+
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      $$('.nav-links a').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+      });
+    });
+  }, { rootMargin: '-45% 0px -48% 0px', threshold: 0 });
+  $$('.section[id], .skills-bg[id], .contact-bg[id]').forEach(section => sectionObserver.observe(section));
+
+  const revealItems = $$('.tl-row, .skill-item, .about-card, .hobi-pill, .hero-stat, .web-dev-copy, .web-stack-card, .web-points > div');
+  revealItems.forEach(item => item.classList.add('reveal'));
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (!entry.isIntersecting) return;
+      setTimeout(() => entry.target.classList.add('is-visible'), Math.min(index * 55, 220));
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  revealItems.forEach(item => revealObserver.observe(item));
+
+  const skillBars = $$('.skill-bar, .lang-bar');
+  skillBars.forEach(bar => {
+    const targetWidth = bar.style.width || '0%';
+    bar.dataset.targetWidth = targetWidth;
+    bar.style.width = '0%';
+  });
+  const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      $$('.skill-bar, .lang-bar', entry.target).forEach(bar => {
+        bar.style.width = bar.dataset.targetWidth;
+      });
+      skillObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.28 });
+  $$('.skills-grid, .lang-row').forEach(group => skillObserver.observe(group));
+
+  function countUp(element) {
+    const raw = element.dataset.value || element.textContent.trim();
+    const target = Number.parseInt(raw.replace(/\D/g, ''), 10);
+    const suffix = raw.includes('+') ? '+' : '';
+    if (!target) return;
+    const duration = 700;
+    const started = performance.now();
+    function tick(now) {
+      const progressValue = Math.min((now - started) / duration, 1);
+      element.textContent = `${Math.floor(target * (1 - Math.pow(1 - progressValue, 3)))}${suffix}`;
+      if (progressValue < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const number = $('.hero-stat-num', entry.target);
+      if (number) countUp(number);
+      statObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.7 });
+  $$('.hero-stat').forEach(stat => statObserver.observe(stat));
+
+  const techDescriptions = {
+    HTML: 'Menyusun struktur konten yang terorganisir agar halaman mudah dibaca dan dikembangkan.',
+    CSS: 'Menerapkan layout, warna, tipografi, dan tampilan responsif untuk pengalaman visual yang konsisten.',
+    JavaScript: 'Menambahkan interaksi dasar seperti navigasi, animasi, validasi form, serta pembaruan elemen halaman.',
+    MySQL: 'Mempelajari penyimpanan dan pengelolaan data untuk mendukung pengembangan aplikasi web yang lebih dinamis.'
+  };
+  const techDetail = $('#techDetail');
+  $$('.tech-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const tech = chip.dataset.tech;
+      $$('.tech-chip').forEach(item => item.classList.toggle('active', item === chip));
+      if (techDetail && techDescriptions[tech]) {
+        techDetail.innerHTML = `<div class="tech-detail-label">${tech}</div><p>${techDescriptions[tech]}</p>`;
+      }
+    });
+  });
+
+  let toastTimer;
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 3600);
+  }
+
+  form?.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = $('#senderName').value.trim();
+    const email = $('#senderEmail').value.trim();
+    const message = $('#senderMessage').value.trim();
+    const fields = [$('#senderName'), $('#senderEmail'), $('#senderMessage')];
+    fields.forEach(field => field.classList.remove('invalid'));
+
+    const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!name || !emailIsValid || !message) {
+      if (!name) $('#senderName').classList.add('invalid');
+      if (!emailIsValid) $('#senderEmail').classList.add('invalid');
+      if (!message) $('#senderMessage').classList.add('invalid');
+      formStatus.textContent = 'Lengkapi nama, email yang valid, dan pesan terlebih dahulu.';
+      showToast('Form belum lengkap. Periksa kolom yang diberi tanda.');
+      return;
+    }
+
+    const subject = encodeURIComponent(`Pesan portofolio dari ${name}`);
+    const body = encodeURIComponent(`Halo Annisa,\n\n${message}\n\nDari: ${name}\nEmail: ${email}`);
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Menyiapkan email...';
+    formStatus.textContent = 'Aplikasi email akan dibuka untuk mengirim pesan.';
+    showToast('Email siap dibuat. Silakan kirim melalui aplikasi email kamu.');
+
+    window.location.href = `mailto:annisarahmiasari165@gmail.com?subject=${subject}&body=${body}`;
+    setTimeout(() => {
+      form.reset();
+      sendBtn.disabled = false;
+      sendBtn.textContent = 'Kirim pesan';
+    }, 900);
+  });
+
+  $('#currentYear').textContent = new Date().getFullYear();
+  $('#lastUpdated').textContent = `TERAKHIR DIPERBARUI · ${new Intl.DateTimeFormat('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date())}`;
+
+  const availabilityText = $('#availabilityText');
+  const availabilityMessages = ['Open to opportunity', 'Open for collaboration', 'Ready to learn & grow'];
+  let availabilityIndex = 0;
+  setInterval(() => {
+    availabilityIndex = (availabilityIndex + 1) % availabilityMessages.length;
+    if (availabilityText) availabilityText.textContent = availabilityMessages[availabilityIndex];
+  }, 5200);
+})();
+</script>
+
+<!-- ANTI MAINSTREAM UWAW UPGRADE START -->
+<style>
+/* ===== UWAW MODE (CINEMATIC UI LAYER) ===== */
+:root{
+  --glow:#7CFFB2;
+  --accent2:#9B87FF;
 }
 
-document.querySelectorAll('.tl-row,.skill-item,.about-card,.hobi-pill').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(16px)';
-  el.style.transition = 'opacity .45s, transform .45s';
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(124,255,178,0.08), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(155,135,255,0.08), transparent 45%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.glitch-title{
+  position:relative;
+  font-weight:900;
+  letter-spacing:2px;
+  text-shadow:0 0 20px rgba(124,255,178,0.3);
+}
+.glitch-title::before,
+.glitch-title::after{
+  content:attr(data-text);
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  overflow:hidden;
+  opacity:.6;
+}
+.glitch-title::before{
+  color:var(--glow);
+  transform:translateX(-2px);
+  animation:glitch1 2s infinite;
+}
+.glitch-title::after{
+  color:var(--accent2);
+  transform:translateX(2px);
+  animation:glitch2 2s infinite;
+}
+@keyframes glitch1{
+  0%,100%{clip-path: inset(0 0 90% 0);}
+  50%{clip-path: inset(40% 0 20% 0);}
+}
+@keyframes glitch2{
+  0%,100%{clip-path: inset(80% 0 0 0);}
+  50%{clip-path: inset(10% 0 60% 0);}
+}
+
+.cursor-glow{
+  position:fixed;
+  width:20px;height:20px;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--glow),transparent 60%);
+  pointer-events:none;
+  mix-blend-mode:screen;
+  transform:translate(-50%,-50%);
+  z-index:9999;
+}
+
+/* Terminal */
+#terminal{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:320px;
+  height:200px;
+  background:rgba(0,0,0,0.7);
+  border:1px solid rgba(124,255,178,0.3);
+  color:#7CFFB2;
+  font-family:monospace;
+  padding:10px;
+  z-index:999;
+  display:none;
+}
+
+</style>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div id="terminal">
+> Annisa.dev terminal<br>
+type: help<br>
+</div>
+
+<script>
+// Cursor glow
+const glow = document.getElementById("cursorGlow");
+document.addEventListener("mousemove",(e)=>{
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
 });
 
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
-setTimeout(animateOnScroll, 100);
-
-document.getElementById('sendBtn').addEventListener('click', function() {
-  this.textContent = 'Terkirim! ✓';
-  this.style.background = 'var(--olive-light)';
-  setTimeout(() => { this.textContent = 'Kirim pesan'; this.style.background = ''; }, 3000);
+// Terminal toggle (Ctrl + K)
+document.addEventListener("keydown",(e)=>{
+  if(e.ctrlKey && e.key==="k"){
+    const t = document.getElementById("terminal");
+    t.style.display = t.style.display==="block"?"none":"block";
+  }
 });
 </script>
+
+</body>
+</html>
