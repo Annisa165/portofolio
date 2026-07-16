@@ -241,7 +241,7 @@ body{overflow-x:hidden}
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
-    <a href="#webdev">Web Dev</a>
+    <a href="#backend">Back End</a>
     <a href="#edu">Pendidikan</a>
     <a href="#exp">Pengalaman</a>
     <a href="#certificates">Sertifikat</a>
@@ -327,36 +327,36 @@ body{overflow-x:hidden}
   </div>
 </div>
 
-<div class="section web-dev-section" id="webdev">
-  <div class="sec-hdr"><span class="sec-num">03 /</span><h2 class="sec-title">Web Development</h2></div>
+<div class="section web-dev-section" id="backend">
+  <div class="sec-hdr"><span class="sec-num">03 /</span><h2 class="sec-title">Back End Development</h2></div>
   <div class="web-dev-layout">
     <div class="web-dev-copy">
       <p class="web-kicker">// Fokus pengembangan</p>
-      <h3>Membangun website yang <em>rapi, responsif,</em> dan mudah digunakan.</h3>
-      <p>Aku terus mengembangkan kemampuan front-end untuk membuat halaman profil, landing page, dan antarmuka web yang tampil nyaman di desktop maupun ponsel. Fokus utamaku adalah struktur yang jelas, desain yang responsif, serta interaksi sederhana yang membantu pengguna.</p>
+      <h3>Membangun sistem yang <em>solid, aman,</em> dan terstruktur di balik layar.</h3>
+      <p>Aku fokus mengembangkan logika server, API, dan struktur database yang jadi fondasi sebuah aplikasi. Saat ini aku menjalani internship sebagai Backend Developer, mengerjakan modul AI Sustainability Assistant menggunakan Laravel 13 dan PHP 8.3. Fokus utamaku adalah kode yang rapi, alur data yang jelas, dan sistem yang bisa diandalkan.</p>
       <div class="web-points">
-        <div><span>01</span><strong>Landing page & profil</strong><small>Halaman informatif dengan struktur konten yang terarah.</small></div>
-        <div><span>02</span><strong>Responsive interface</strong><small>Layout yang menyesuaikan layar desktop, tablet, dan mobile.</small></div>
-        <div><span>03</span><strong>Interaksi web</strong><small>Animasi, navigasi, validasi form, dan elemen JavaScript dasar.</small></div>
+        <div><span>01</span><strong>API & Endpoint</strong><small>Merancang REST API yang terstruktur untuk kebutuhan aplikasi.</small></div>
+        <div><span>02</span><strong>Database design</strong><small>Menyusun skema relasional yang efisien dan mudah dikembangkan.</small></div>
+        <div><span>03</span><strong>Business logic</strong><small>Mengelola alur data, autentikasi, dan integrasi antar sistem.</small></div>
       </div>
     </div>
-    <aside class="web-stack-card" aria-label="Teknologi web yang dipelajari">
+    <aside class="web-stack-card" aria-label="Teknologi backend yang dipelajari">
       <div class="web-stack-top">
         <span class="stack-dot"></span>
         <span>TECH STACK</span>
       </div>
       <p class="stack-label">Teknologi yang digunakan dan sedang diperdalam</p>
-      <div class="tech-picker" role="tablist" aria-label="Pilih teknologi web">
-        <button class="tech-chip active" type="button" data-tech="HTML">HTML</button>
-        <button class="tech-chip" type="button" data-tech="CSS">CSS</button>
-        <button class="tech-chip" type="button" data-tech="JavaScript">JavaScript</button>
+      <div class="tech-picker" role="tablist" aria-label="Pilih teknologi backend">
+        <button class="tech-chip active" type="button" data-tech="PHP">PHP</button>
+        <button class="tech-chip" type="button" data-tech="Laravel">Laravel</button>
         <button class="tech-chip" type="button" data-tech="MySQL">MySQL</button>
+        <button class="tech-chip" type="button" data-tech="REST API">REST API</button>
       </div>
       <div class="tech-detail" id="techDetail" aria-live="polite">
-        <div class="tech-detail-label">HTML</div>
-        <p>Menyusun struktur konten yang terorganisir agar halaman mudah dibaca dan dikembangkan.</p>
+        <div class="tech-detail-label">PHP</div>
+        <p>Bahasa utama untuk logika server, diperkuat dengan pengalaman langsung di PHP 8.3.</p>
       </div>
-      <div class="web-note">Saat ini terbuka untuk belajar, kolaborasi, dan membangun proyek web sederhana.</div>
+      <div class="web-note">Saat ini aktif magang sebagai Backend Developer, terbuka untuk kolaborasi proyek berbasis Laravel.</div>
     </aside>
   </div>
 </div>
@@ -555,10 +555,10 @@ body{overflow-x:hidden}
   $$('.hero-stat').forEach(stat => statObserver.observe(stat));
 
   const techDescriptions = {
-    HTML: 'Menyusun struktur konten yang terorganisir agar halaman mudah dibaca dan dikembangkan.',
-    CSS: 'Menerapkan layout, warna, tipografi, dan tampilan responsif untuk pengalaman visual yang konsisten.',
-    JavaScript: 'Menambahkan interaksi dasar seperti navigasi, animasi, validasi form, serta pembaruan elemen halaman.',
-    MySQL: 'Mempelajari penyimpanan dan pengelolaan data untuk mendukung pengembangan aplikasi web yang lebih dinamis.'
+    PHP: 'Bahasa utama untuk logika server, diperkuat dengan pengalaman langsung di PHP 8.3.',
+    Laravel: 'Framework utama saat ini — dipakai untuk membangun modul AI Sustainability Assistant di internship.',
+    MySQL: 'Merancang skema database relasional yang efisien untuk mendukung kebutuhan aplikasi.',
+    'REST API': 'Membangun endpoint terstruktur untuk komunikasi antara server dan aplikasi client.'
   };
   const techDetail = $('#techDetail');
   $$('.tech-chip').forEach(chip => {
